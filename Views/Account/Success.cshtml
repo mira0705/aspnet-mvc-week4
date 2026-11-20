@@ -1,0 +1,16 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Тіркелу сәтті өтті";
+}
+
+<div class="container mt-5">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Тіркелу сәтті аяқталды!</h4>
+        <p>Қош келдіңіз, <strong>@Model</strong>.</p>
+        @if (!string.IsNullOrWhiteSpace(ViewBag.Email as string))
+        {
+            <p class="mb-0">Тіркелген Email: <strong>@ViewBag.Email</strong></p>
+        }
+    </div>
+    <a asp-action="Register" class="btn btn-outline-primary">Жаңа тіркеу формасына оралу</a>
+</div>
